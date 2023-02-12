@@ -246,7 +246,7 @@ FSM_State PourCombien::get_gm_bet_state(void) {
 		this->minus_btn.reset();
 
 		// Go to next state if player bet is not over maximum bet
-		if (this->game_master_bet <= this->max_bet){
+		if ((this->game_master_bet <= this->max_bet) && (this->game_master_bet > 0)){
 			// Stop animation for future use
 			this->stop_animation(GET_GM_BET);
 
@@ -290,7 +290,7 @@ FSM_State PourCombien::get_player_bet_state(void) {
 		this->minus_btn.reset();
 
 		// Go to next state if player bet is not over maximum bet
-		if (this->player_bet <= this->max_bet) {
+		if ((this->player_bet <= this->max_bet) && (this->player_bet > 0)) {
 			// Stop animation for future use
 			this->stop_animation(GET_PLAYER_BET);
 
